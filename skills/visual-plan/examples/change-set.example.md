@@ -9,6 +9,23 @@ Adds a CSV writer beside the existing JSON output and calls it from the job's ru
 ## File tree
 
 - <details open>
+  <summary><code>docs/</code></summary>
+
+    - **`reports.md`** — Document the new CSV output.
+
+      <details open>
+      <summary aria-label="Toggle changes for docs/reports.md"></summary>
+
+        ```diff
+        -Outputs: `summary.json` in the output directory.
+        +Outputs: `summary.json` and `report.csv` in the output directory.
+        ```
+
+      </details>
+
+  </details>
+
+- <details open>
   <summary><code>src/</code></summary>
 
     - <details open>
@@ -89,23 +106,6 @@ Adds a CSV writer beside the existing JSON output and calls it from the job's ru
             ```
 
           </details>
-
-      </details>
-
-  </details>
-
-- <details open>
-  <summary><code>docs/</code></summary>
-
-    - **`reports.md`** — Document the new CSV output.
-
-      <details open>
-      <summary aria-label="Toggle changes for docs/reports.md"></summary>
-
-        ```diff
-        -Outputs: `summary.json` in the output directory.
-        +Outputs: `summary.json` and `report.csv` in the output directory.
-        ```
 
       </details>
 

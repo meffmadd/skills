@@ -31,6 +31,7 @@ Produce an implementation proposal as a Markdown file tree. Keep repository sour
 
 ## File-tree grammar
 
+- **Documentation first.** Lead with planned changes to `README.md`, `AGENTS.md`, or `docs/` so the reader meets the new behavior or workflow before its implementation and tests. Keep files under their physical ancestors. When no documentation change is warranted, start with implementation.
 - **Directories.** Use nested Markdown lists, indented four spaces per directory level. Wrap directory contents in `<details open>` with a visible `<summary><code>directory/</code></summary>`. Directory containers represent physical paths, not architectural concepts.
 - **File headlines.** A headline is a plain Markdown leaf: **`filename.py`** — A sentence of five to seven words. It summarizes the change, or names the preserved responsibility of an unchanged anchor. The headline sits outside the file's `<details>`, so it stays visible when the body collapses or a renderer ignores folding. Filenames use inline code, because some viewers drop Markdown link labels. A filename plus its ancestors identifies one repository-relative path, so disambiguate a repeated basename through its ancestors.
 - **File folding.** Beneath each headline, put the fenced `diff` block inside a separate `<details open>`. Its summary is an unlabeled disclosure arrow: `<summary aria-label="Toggle changes for REPOSITORY_PATH"></summary>`. Keep the accessible name but no visible label such as “Diff.” Use `open` by default; omit it for an explicitly requested collapsed initial view.
