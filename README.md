@@ -4,7 +4,6 @@ My personal skills repository.
 
 | Skill | Purpose |
 | --- | --- |
-| [pi-subagent](skills/pi-subagent/SKILL.md) | Spawn and manage background `pi` subagents with fresh contexts. |
 | [simplification-review](skills/simplification-review/SKILL.md) | Rank evidence-backed opportunities to remove superfluous abstractions, mechanisms, and optional features. |
 | [visual-plan](skills/visual-plan/SKILL.md) | Turn a spec or issue into a collapsible file-tree implementation plan with concise pseudocode diffs. |
 
@@ -23,28 +22,6 @@ pi install git:github.com/meffmadd/skills
 ```
 
 ## Usage
-
-### pi-subagent
-
-Spawns **subagents**: background child `pi` processes with a fresh context. They share your cwd and credentials, see none of your conversation, and your context grows only by what you read back. Use it for context-heavy legwork or parallel investigations.
-
-Requires the `pi` CLI on PATH and Node.js ≥ 23.6 to run the bundled TypeScript script directly.
-
-Ask your agent to use the skill, or load it directly in pi with `/skill:pi-subagent`. Quick taste:
-
-```bash
-CLI=skills/pi-subagent/scripts/pi-subagent.ts
-
-RUN=$(node "$CLI" spawn --tools read,grep,find,ls --thinking low \
-  "Find every TODO in this repo. <worker contract>")
-
-node "$CLI" wait "$RUN"   # blocks until settled, prints the final summary
-
-RUN2=$(node "$CLI" resume "$RUN" "Now write the tests.")  # fork the session into a new background run
-node "$CLI" wait "$RUN2"
-```
-
-The agent-facing contract — spawn, inspect, follow-ups, guardrails — lives in [`skills/pi-subagent/SKILL.md`](skills/pi-subagent/SKILL.md). Run `node "$CLI" --help` for the full CLI reference.
 
 ### simplification-review
 

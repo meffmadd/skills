@@ -1,7 +1,7 @@
 {
   "name": "@meffmadd/skills",
   "version": "0.1.0",
-  "description": "Agent skills for code review and delegation, including Pi subagents",
+  "description": "Agent skills for simplification review and visual implementation plans",
   "type": "module",
   "keywords": ["pi-package", "agent-skills"],
   "files": ["skills/"],
